@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Car UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="tableselect">
+        <h2>Select Table:</h2>
+        <select id="tableSelect">
+            <option value="carstable">Cars</option>
+            <option value="customertable">Customers</option>
+            <option value="shoptable">Dealerships</option>
+            <option value="managertable">Managers</option>
+        </select>
+        <button type="button" onclick="selectTable()">Select</button>
+    </div>
+
+
+    <div class="cars_container" id="cars_container">
+        <h1>Cars Catalog</h1>
+
+        <div id="formdiv">
+            <label>Car Type</label>
+            <input type="text" id="cartype" />
+            <button type="button" onclick="carcreate()">Add Car</button>
+        </div>
+
+        <div id="updateformdiv">
+            <label>Update Cartype</label>
+            <input type="text" id="carupdate" />
+            <label>Update Color</label>
+            <input type="text" id="colorupdate" />
+            <label>Update Price</label>
+            <input type="text" id="priceupdate" />
+            <button type="button" onclick="carupdate()">Update</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Color</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="car_resultarea">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="customers_container" id="customers_container">
+        <h1>Customers</h1>
+
+        <div id="formdiv">
+            <label>Customer Name</label>
+            <input type="text" id="customername" />
+            <button type="button" onclick="customercreate()">Add Customer</button>
+        </div>
+
+        <div id="updateformdiv">
+            <label>Update Customer Name</label>
+            <input type="text" id="nameupdate" />
+            <label>Update Age</label>
+            <input type="text" id="ageupdate" />
+            <label>Update Adress</label>
+            <input type="text" id="addressupdate" />
+            <button type="button" onclick="customerupdate()">Update</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="customer_resultarea">
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="CarsJs.js"></script>
+    <script src="CustomerJs.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

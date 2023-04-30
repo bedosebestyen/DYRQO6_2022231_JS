@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarsDbApp.Logic\DYRQO6_HFT_2022231.Logic.csproj" />
+    <ProjectReference Include="..\CarsDbApp.Models\DYRQO6_HFT_2022231.Models.csproj" />
+    <ProjectReference Include="..\CarsDbApp.Repository\DYRQO6_HFT_2022231.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
