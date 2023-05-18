@@ -26,13 +26,17 @@ namespace DYRQO6_HFT_2022231.Logic
 
         public void Create(Cars item)
         {
-            if (item.CarType == null)
+            if (item.CarType == null || item.CarType == "")
             {
                 throw new NullReferenceException("Car's brand cannot be null!");
             }
-            if (item.CarType.Count() >=250)
+            if (item.CarType.Count() >= 250)
             {
                 throw new ArgumentException("Please use less characters!");
+            }
+            if (item.Price > 10000000 || item.Price < 3000)
+            {
+                throw new ArgumentException("Please remain betwwen 3000-1000000");
             }
             carsrepo.Create(item);
         }

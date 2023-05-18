@@ -9,36 +9,36 @@ namespace DYRQO6_HFT_2022231.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ShopController : ControllerBase
+    public class CarsController : ControllerBase
     {
-        ICarShopLogic logic;
+        ICarsLogic logic;
 
-        public ShopController(ICarShopLogic logic)
+        public CarsController(ICarsLogic logic)
         {
             this.logic = logic;
         }
 
         [HttpGet]
-        public IEnumerable<CarShop> ReadAll()
+        public IEnumerable<Cars> ReadAll()
         {
             return this.logic.ReadAll();
         }
 
 
         [HttpGet("{id}")]
-        public CarShop Read(int id)
+        public Cars Read(int id)
         {
             return this.logic.Read(id);
         }
 
         [HttpPost]
-        public void Create([FromBody] CarShop value)
+        public void Create([FromBody] Cars value)
         {
             this.logic.Create(value);
         }
 
         [HttpPut]
-        public void Update([FromBody] CarShop value)
+        public void Update([FromBody] Cars value)
         {
             this.logic.Update(value);
         }

@@ -6,34 +6,43 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="tableselect">
-        <h2>Select Table:</h2>
-        <select id="tableSelect">
-            <option value="carstable">Cars</option>
+    <label class="hamburger-menu">
+        <input type="checkbox"/>
+    </label>
+    <div class="tableselect" id="tableselect">
+        
+        <h2>Tables:</h2>
+        <select id="tableSelect" onchange="selectTable()">
+            <option value="carstable" selected>Cars</option>
             <option value="customertable">Customers</option>
             <option value="shoptable">Dealerships</option>
             <option value="managertable">Managers</option>
         </select>
-        <button type="button" onclick="selectTable()">Select</button>
+        
     </div>
 
 
-    <div class="cars_container" id="cars_container">
-        <h1>Cars Catalog</h1>
 
-        <div id="formdiv">
-            <label>Car Type</label>
-            <input type="text" id="cartype" />
-            <button type="button" onclick="carcreate()">Add Car</button>
+    <div class="cars_container" id="cars_container">
+        <h1>Cars</h1>
+        <button id="createbutton" type="button" onclick="createform()">Create</button>
+        <div id="formdiv" class="formdiv">
+            
+            <input type="text" id="cartype" maxlength="30" placeholder="Car Type"/>
+            
+            <input type="text" id="carcolor" maxlength="30" placeholder="Car Color"/>
+            
+            <input type="number" id="carprice" min="3000" max="1000000" placeholder="Price"/>
+            <button type="button"  onclick="carcreate()">Add Car</button>
         </div>
 
-        <div id="updateformdiv">
-            <label>Update Cartype</label>
-            <input type="text" id="carupdate" />
-            <label>Update Color</label>
-            <input type="text" id="colorupdate" />
-            <label>Update Price</label>
-            <input type="text" id="priceupdate" />
+        <div id="updateformdiv" class="updateformdiv">
+            <label>Update Cartype: <input type="text" id="carupdate" /></label>
+            
+            <label>Update Color: <input type="text" id="colorupdate" /></label>
+            
+            <label>Update Price: <input type="text" id="priceupdate" /></label>
+            
             <button type="button" onclick="carupdate()">Update</button>
         </div>
 
@@ -54,14 +63,17 @@
 
     <div class="customers_container" id="customers_container">
         <h1>Customers</h1>
-
-        <div id="formdiv">
-            <label>Customer Name</label>
-            <input type="text" id="customername" />
+        <button id="customer_createbutton" type="button" onclick="customer_createform()">Create</button>
+        <div id="customer_formdiv" class="formdiv">
+            
+            <input type="text" id="customername" placeholder="Name"/>
+            <input type="number" id="customerage" min="17" max="120" placeholder="Age"/>
+            
+            <input type="text" id="customeraddress" placeholder="Address"/>
             <button type="button" onclick="customercreate()">Add Customer</button>
         </div>
 
-        <div id="updateformdiv">
+        <div id="customerupdateformdiv">
             <label>Update Customer Name</label>
             <input type="text" id="nameupdate" />
             <label>Update Age</label>
@@ -85,10 +97,87 @@
             </tbody>
         </table>
     </div>
+
+    <div class="shop_container" id="shop_container">
+        <h1>Shops</h1>
+        <button id="shop_createbutton" type="button" onclick="shop_createform()">Create</button>
+        <div id="shop_formdiv" class="formdiv">
+            
+            <input type="text" id="shopname" placeholder="Name"/>
+            
+            <input type="number" id="carscount" min="1" max="100" placeholder="Number of cars"/>
+            
+            <input type="text" id="shopaddress" placeholder="Address"/>
+            <button type="button" onclick="shopcreate()">Add Shop</button>
+        </div>
+
+        <div id="shopupdateformdiv">
+            <label>Update Shop Name</label>
+            <input type="text" id="shopnameupdate" />
+            <label>Update Count</label>
+            <input type="text" id="countupdate" />
+            <label>Update Adress</label>
+            <input type="text" id="shopaddressupdate" />
+            <button type="button" onclick="shopupdate()">Update</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Cars Count</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="shop_resultarea">
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="managers_container" id="managers_container">
+        <h1>Managers</h1>
+        <button id="manager_createbutton" type="button" onclick="manager_createform()">Create</button>
+        <div id="manager_formdiv" class="formdiv">
+            
+            <input type="text" id="managername" placeholder="Name"/>
+            
+            <input type="number" id="managerage" min="18" max="120" placeholder="Age"/>
+            
+            <input type="number" id="managersalary" min="1000" max="10000" placeholder="Salary"/>
+
+            <button type="button" onclick="managercreate()">Add Manager</button>
+        </div>
+
+        <div id="managerupdateformdiv">
+            <label>Update Manager Name</label>
+            <input type="text" id="managernameupdate" />
+            <label>Update Age</label>
+            <input type="text" id="managerageupdate" />
+            <label>Update Salary</label>
+            <input type="text" id="salaryupdate" />
+            <button type="button" onclick="managerupdate()">Update</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="manager_resultarea">
+            </tbody>
+        </table>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
     <script src="CarsJs.js"></script>
-    <script src="CustomerJs.js"></script>
     <script src="script.js"></script>
-    
 </body>
 </html>

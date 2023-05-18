@@ -1,3 +1,4 @@
+using DYRQO6_HFT_2022231.Endpoint.Services;
 using DYRQO6_HFT_2022231.Logic;
 using DYRQO6_HFT_2022231.Models;
 using DYRQO6_HFT_2022231.Repository;
@@ -47,6 +48,7 @@ namespace DYRQO6_HFT_2022231.Endpoint
             services.AddControllers().AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
+            services.AddSignalR();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -87,6 +89,7 @@ namespace DYRQO6_HFT_2022231.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

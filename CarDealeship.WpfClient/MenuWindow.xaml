@@ -1,0 +1,106 @@
+﻿<Window x:Class="CarDealeship.WpfClient.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarDealeship.WpfClient"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="450" Width="800"
+        Background="BurlyWood"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="bt_cars" Content="Cars" Grid.Column="1" Grid.Row="0"
+                
+                FontSize="32"
+                FontWeight="DemiBold"
+                Margin="100,25,100,25"
+                Background="RosyBrown"
+                BorderBrush="Black"
+                BorderThickness="3"
+                VerticalContentAlignment="Center"
+                Padding="0,0,0,3" Click="bt_cars_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="bt_customers" Content="Customers" Grid.Column="1" Grid.Row="1"
+                
+                FontSize="32"
+                FontWeight="DemiBold"
+                Margin="100,25,100,25"
+                Background="RosyBrown"
+                BorderBrush="Black"
+                BorderThickness="3"
+                VerticalContentAlignment="Center"
+                Padding="0,0,0,3" Click="bt_customers_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="bt_shops" Content="Dealerships" Grid.Column="1" Grid.Row="2"
+                
+                FontSize="32"
+                FontWeight="DemiBold"
+                Margin="100,25,100,25"
+                Background="RosyBrown"
+                BorderBrush="Black"
+                BorderThickness="3"
+                VerticalContentAlignment="Center"
+                Padding="0,0,0,3" Click="bt_shops_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="bt_managers" Content="Managers" Grid.Column="1" Grid.Row="3"
+                
+                FontSize="32"
+                FontWeight="DemiBold"
+                Margin="100,25,100,25"
+                Background="RosyBrown"
+                BorderBrush="Black"
+                BorderThickness="3"
+                VerticalContentAlignment="Center"
+                Padding="0,0,0,3" Click="bt_managers_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="bt_exit" Content="X" Grid.Column="0" Grid.Row="0"
+                
+                FontSize="32"
+                FontWeight="DemiBold"
+                Margin="10,0,143,55"
+                Background="RosyBrown"
+                BorderBrush="Black"
+                BorderThickness="3"
+                VerticalContentAlignment="Center"
+                Padding="0,0,0,3" Click="bt_exit_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+
+</Window>
