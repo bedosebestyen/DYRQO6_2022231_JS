@@ -39,20 +39,20 @@ namespace DYRQO6_HFT_2022231.Logic
         public void Delete(int id)
         {
             var customer = this.repo.Read(id);
-            //if (customer == null)
-            //{
-            //    throw new ArgumentException("Customer does not exist!");
-            //}
+            if (customer == null)
+            {
+                throw new ArgumentException("Customer does not exist!");
+            }
             this.repo.Delete(id);
         }
 
         public Customer Read(int id)
         {
             var customer = this.repo.Read(id);
-            //if (customer == null)
-            //{
-            //    throw new ArgumentException("Customer does not exist!");
-            //}
+            if (customer == null)
+            {
+                throw new ArgumentException("Customer does not exist!");
+            }
             return this.repo.Read(id);
         }
 

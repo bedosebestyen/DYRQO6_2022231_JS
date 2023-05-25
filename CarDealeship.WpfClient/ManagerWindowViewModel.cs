@@ -35,7 +35,8 @@ namespace CarDealeship.WpfClient
 					{
 						Name= value.Name,
 						Age= value.Age,
-						Salary= value.Salary
+						Salary= value.Salary,
+						ManagerId= value.ManagerId
 					};
 
 					OnPropertyChanged();
@@ -58,7 +59,7 @@ namespace CarDealeship.WpfClient
 		{
 			if (!IsInDesignMode)
 			{
-				Managers = new RestCollection<Manager>("http://localhost:18906/", "manager");
+				Managers = new RestCollection<Manager>("http://localhost:18906/", "manager", "hub");
 
 				CreateManagerCommand = new RelayCommand(() =>
 				{

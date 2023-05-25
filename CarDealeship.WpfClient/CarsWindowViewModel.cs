@@ -62,7 +62,7 @@ namespace CarDealeship.WpfClient
             
             if (!IsInDesignMode)
             {
-                Cars = new RestCollection<Cars>("http://localhost:18906/", "cars");
+                Cars = new RestCollection<Cars>("http://localhost:18906/", "cars", "hub");
 
                 CreateCarCommand = new RelayCommand(() =>
                 {

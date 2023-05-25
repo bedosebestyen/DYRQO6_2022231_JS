@@ -39,7 +39,8 @@ namespace CarDealeship.WpfClient
                     {
                         Name = value.Name,
                         AvailableCarsCount= value.AvailableCarsCount,
-                        Address= value.Address
+                        Address= value.Address,
+                        ManagerId= value.ManagerId
                     };
 
                     OnPropertyChanged();
@@ -62,7 +63,7 @@ namespace CarDealeship.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Shops = new RestCollection<CarShop>("http://localhost:18906/", "carshop");
+                Shops = new RestCollection<CarShop>("http://localhost:18906/", "carshop", "hub");
 
                 CreateShopCommand = new RelayCommand(() =>
                 {

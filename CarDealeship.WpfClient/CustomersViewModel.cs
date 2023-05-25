@@ -37,7 +37,8 @@ namespace CarDealeship.WpfClient
                     {
                         Name =value.Name,
                         Address = value.Address,
-                        Age = value.Age
+                        Age = value.Age,
+                        CustomerId= value.CustomerId
                     };
 
                     OnPropertyChanged();
@@ -63,7 +64,7 @@ namespace CarDealeship.WpfClient
 
             if (!IsInDesignMode)
             {
-                Customer = new RestCollection<Customer>("http://localhost:18906/", "customer");
+                Customer = new RestCollection<Customer>("http://localhost:18906/", "customer", "hub");
 
                 CreateCustomerCommand = new RelayCommand(() =>
                 {
@@ -85,6 +86,7 @@ namespace CarDealeship.WpfClient
                 UpdateCustomerCommand = new RelayCommand(() =>
                 {
                     Customer.Update(SelectedCustomer);
+                    ;
                 });
 
                 SelectedCustomer = new Customer();

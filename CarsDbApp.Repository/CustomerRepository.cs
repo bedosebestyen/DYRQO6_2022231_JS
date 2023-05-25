@@ -16,11 +16,13 @@ namespace DYRQO6_HFT_2022231.Repository
         public override Customer Read(int id)
         {
             return ctx.Customer.FirstOrDefault(x => x.CustomerId == id);
+            ;
         }
 
         public override void Update(Customer item)
         {
             var old = Read(item.CustomerId);
+            ;
             foreach (var prop in old.GetType().GetProperties())
             {
                 if (prop.GetAccessors().FirstOrDefault(x => x.IsVirtual) == null)
